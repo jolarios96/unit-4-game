@@ -1,20 +1,10 @@
 
+$(document).ready(function () {
+    var characters = ['Warrior' , 'Mage', 'Priest'];
 
-
-
-var jobData = {
-
-    dummy = {
-        name: 'Dummy',
-        desc: "It's a dummy, dummy.",
-
-        hp: 100,
+    for (var i = 0; i < characters.length; i++){
         
-        atk: 0,
-        def: 0,
-        // more to come
     }
 
-    
-}
-
+    // end of doc
+})
