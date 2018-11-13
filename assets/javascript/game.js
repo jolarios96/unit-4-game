@@ -22,5 +22,19 @@ $(document).ready(function () {
             $('#character-select').append(charBox);
         }
     }
+
+// Psuedo-code
+
+// implement function that removes character box for player-character;
+// implement function that moves enemies to enemies list
+// "" function that moves single enemy to defender's spot
+// "" on-click event button to "attack"
+// implement function to remove defender; condition: 0 health;
+// "" function that increases player's attack after a victory;
+
+// create some checks that stops usr from:
+//  -   attacking nothing;
+//  -   changing the defender mid-fight;
+
 // end of doc
 })
