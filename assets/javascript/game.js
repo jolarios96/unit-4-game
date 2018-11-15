@@ -1,78 +1,76 @@
-
 $(document).ready(function () {
-    var characters = ['Warrior', 'Mage', 'Thief'];
-    // var characterData = [
-    //     {
-    //         name: 'Warrior',
-    //         health: 10,
-    //     },
-    //     {
-    //         name: 'Mage',
-    //         health: 10,
-    //     },
-    //     {
-    //         name: 'Thief',
-    //         health: 10
-    //     }
-    // ];
-
-    var picked = false;
-    console.log($(this));
-
-    renderCharSelect();
-    console.log($(this));
-
-    // On-click events
-    $('.character-button').on('click', function () {
-        console.log(picked)
-        if (picked === false) {
-            for (var i = 0; i < characters.length; i++) {
-                // console.log('loop' , i);
-                // console.log($(this));
-                // console.log(characters[i]);
-                // console.log($(this).attr('data-character'));
-
-                // if (characters[i] === ($(this).attr('data-character'))) {
-                //     var pickedChar = $('<button>');
-                //     pickedChar.addClass('character-button');
-                //     pickedChar.text(characters[i]);
-                //     $('#player-character').append(pickedChar);
-                //     $('#player-character').append($(this));
-                // }
-                // else {
-                //     var enemyChar = $('<button>');
-                //     enemyChar.addClass('character-button');
-                //     enemyChar.text(characters[i]);
-                //     $('#enemy-characters').append(enemyChar);
-                // }
-            }
-            // $('#character-select').empty();
-            picked = true;
+    var characterData = [
+        {
+            name: 'Warrior',
+            health: 10,
+            attack: 0,
+        },
+        {
+            name: 'Mage',
+            health: 10,
+            attack: 0,
+        },
+        {
+            name: 'Thief',
+            health: 10,
+            attack: 0,
+        },
+        {
+            name: 'Dummy',
+            health: 10,
+            attack: 0,
         }
-        else { // picked === true
-            console.log('boolean true')
-        }
-    })
+    ];
 
-    //
-    // FUNCTIONS
-    function renderCharSelect() {
-        for (var i = 0; i < characters.length; i++) {
+    // -- MAIN DRIVER
+    initialize();
+    choosePlayer();
+    chooseDefender();
+
+    // -- END OF DRIVER
+
+
+
+    // -- FUNCTIONS
+    function initialize() {
+        for (var i = 0; i < characterData.length; i++) {
             var charBox = $('<button>');
             charBox.addClass('character-button');
-            charBox.attr('data-character', characters[i])
-            charBox.text(characters[i]);
+            charBox.attr('data-name', characterData[i].name);
+            charBox.text(characterData[i].name);
             $('#character-select').append(charBox);
         }
     }
 
+    function choosePlayer() {
+        $('.character-button').on('click', function () {
+            charBox = $('<button>');
+            charBox.attr('data-name', $(this).data('name'));
+            charBox.text(charBox.data('name'));
+            $('#player-character').append(charBox);
+
+            for (var i = 0; i < characterData.length; i++) {
+                if (characterData[i].name !== charBox.data('name')) {
+                    enemyBox = $('<button>');
+                    enemyBox.addClass('enemy-button')
+                    enemyBox.attr('data-name', characterData[i].name);
+                    // enemyBox.attr('id', i)
+                    enemyBox.text(characterData[i].name);
+                    $('#enemy-list').append(enemyBox);
+                }
+            }
+
+            $('#character-select').empty();
+        });
+    }
+
+
+
     // Psuedo-code
 
-    // implement function that removes character box for player-character;
-    // implement function that moves enemies to enemies list
-    // "" function that moves single enemy to defender's spot
+    // implement function that moves single enemy to defender's spot
     // "" on-click event button to "attack"
-    // implement function to remove defender; condition: 0 health;
+    // "" function to remove defender; condition: 0 health;
     // "" function that increases player's attack after a victory;
 
     // create some checks that stops usr from:

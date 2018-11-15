@@ -48,21 +48,39 @@
     }
 
     button {
-        height: 100%
-        /* background-color: red; */
+        height: 100px;
+        width: 20%;
+
+        cursor: pointer;
     }
 
-    .character-button:hover {
+    button:hover {
         background-color: orange;
     }
+    
+ 
 
     .character-button {
         height: 100px;
         width: 20%;
 
-        cursor: pointer; /* Pointer/hand icon */
+        cursor: pointer;
 
     }
+    
+    .enemy-button {
+        height: 100px;
+        width: 20%;
+    }
+
+
+
+    .defender-button {
+        height: 100px;
+        width: 20%;
+    }
+
+  
 
 
 
@@ -82,13 +100,13 @@
             <div id='player-character'></div>
 
             <h2>Enemies Available to Attack:</h2>
-            <div id='enemy-characters'></div>
+            <div id='enemy-list'></div>
             <div>
                 <h2>Fight Section</h2>
                 <!-- Put Attack Button Here -->
             </div>
             <h2>Current Defender:</h2>
-            <div id='current-target'></div>
+            <div id='defender'></div>
         </div>
     </div>
 
