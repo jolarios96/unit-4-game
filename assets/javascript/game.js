@@ -64,6 +64,9 @@ $(document).ready(function () {
         });
     }
 
+    function chooseDefender() {
+
+    }
 
 
     // Psuedo-code
