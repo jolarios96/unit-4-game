@@ -22,16 +22,25 @@ $(document).ready(function () {
         }
     ];
 
-    var picked = false;
+    var pickedPlayer = false;
+    var pickedDefender = false;
+    var defenderAlive;
 
     // -- MAIN DRIVER
     initialize();
     
     $('.character-button').on('click', function () {
-        if (!picked) {
+        if (!pickedPlayer) {
+            $(this).removeClass('character-button');
             $('#player-character').append($(this));
             $('#enemy-list').append($('#character-select'));
-            picked = true;
+            pickedPlayer = true;
+        }
+        else if (!pickedDefender){
+                $(this).removeClass('character-button');
+                $('#defender').append($(this));
+                pickedDefender = true;
+                defenderAlive = true;
         }
         else {
             
