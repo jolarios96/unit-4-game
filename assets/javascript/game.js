@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    //  currently using placeholder values
     var characterData = [
         {
             name: 'Warrior',
@@ -16,6 +17,7 @@ $(document).ready(function () {
             attack: 0,
         },
         {
+            //  placeholder/testing character
             name: 'Dummy',
             health: 10,
             attack: 0,
@@ -44,7 +46,7 @@ $(document).ready(function () {
         }
         else {
             if (defenderAlive){
-
+                // work-in-progress
             }
         }
     });
@@ -68,15 +70,45 @@ $(document).ready(function () {
 
 
     // Psuedo-code
+    // undergo balancing process to solve the below:
+        // display health of characters
+        // make attack button functional
+        // "" function that increases player's attack after a victory;
 
-    // display health of characters
-    // make attack button functional
+
     // "" function to remove defender; condition: 0 health;
-    // "" function that increases player's attack after a victory;
+        //  may remove via *visibility* due to
+        // on-click scripts not working on newly-made elements.
+
+
+
+    // functional reset button
+        // maybe function via page refresh?
+        //OR:
+        // re-append containers to inital positions,
+        // and add classes back to them.
+        // (Removed classes at certain points to restrict button actions)
+
 
     // create some checks that stops usr from:
-    //  -   attacking nothing;
-    //  -   changing the defender mid-fight;
+        //  -   attacking nothing;
+        //  DONE --   changing the defender mid-fight;
+    
+    // find a good 'theme' for the game (genre / franchise-wise)  
+        // Traditional elements ?
+            //  Maybe.
+        // Based on existing franchises ?
+            //  Preferably not.
+        // Use original free-use game assets ?
+            //  Possibly.
+
+    // Scripts in-progress:
+        //  attack button
+        //  reset button
+        //  function calcDamage(){} -- Math.Floor(Math.Rand() * _x_ )
+        //  function checkHP(){} -- on hp === 0, player loses or defender loses
+        //  function attackUp(){} -- on Defender hp <= 0; raise own atk
+        
 
     // end of doc
 })
