@@ -43,7 +43,9 @@ $(document).ready(function () {
                 defenderAlive = true;
         }
         else {
-            
+            if (defenderAlive){
+                
+            }
         }
     });
     // -- END OF DRIVER
