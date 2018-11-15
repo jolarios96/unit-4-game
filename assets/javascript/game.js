@@ -2,17 +2,17 @@ $(document).ready(function () {
     var characterData = [
         {
             name: 'Warrior',
-            health: 10,
+            health: 100,
             attack: 0,
         },
         {
             name: 'Mage',
-            health: 10,
+            health: 80,
             attack: 0,
         },
         {
             name: 'Thief',
-            health: 10,
+            health: 50,
             attack: 0,
         },
         {
@@ -44,7 +44,7 @@ $(document).ready(function () {
         }
         else {
             if (defenderAlive){
-                
+
             }
         }
     });
@@ -69,8 +69,8 @@ $(document).ready(function () {
 
     // Psuedo-code
 
-    // implement function that moves single enemy to defender's spot
-    // "" on-click event button to "attack"
+    // display health of characters
+    // make attack button functional
     // "" function to remove defender; condition: 0 health;
     // "" function that increases player's attack after a victory;
 
