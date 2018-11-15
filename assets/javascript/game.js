@@ -22,11 +22,21 @@ $(document).ready(function () {
         }
     ];
 
+    var picked = false;
+
     // -- MAIN DRIVER
     initialize();
-    choosePlayer();
-    chooseDefender();
-
+    
+    $('.character-button').on('click', function () {
+        if (!picked) {
+            $('#player-character').append($(this));
+            $('#enemy-list').append($('#character-select'));
+            picked = true;
+        }
+        else {
+            
+        }
+    });
     // -- END OF DRIVER
 
 
@@ -42,31 +52,8 @@ $(document).ready(function () {
         }
     }
 
-    function choosePlayer() {
-        $('.character-button').on('click', function () {
-            charBox = $('<button>');
-            charBox.attr('data-name', $(this).data('name'));
-            charBox.text(charBox.data('name'));
-            $('#player-character').append(charBox);
 
-            for (var i = 0; i < characterData.length; i++) {
-                if (characterData[i].name !== charBox.data('name')) {
-                    enemyBox = $('<button>');
-                    enemyBox.addClass('enemy-button')
-                    enemyBox.attr('data-name', characterData[i].name);
-                    // enemyBox.attr('id', i)
-                    enemyBox.text(characterData[i].name);
-                    $('#enemy-list').append(enemyBox);
-                }
-            }
 
-            $('#character-select').empty();
-        });
-    }
-
-    function chooseDefender() {
-
-    }
 
 
     // Psuedo-code
